@@ -30,8 +30,8 @@ namespace Box2DX.Common
 #if TARGET_FLOAT32_IS_FIXED
 		public static readonly float FLT_EPSILON = FIXED_EPSILON;
 		public static readonly float FLT_MAX = FIXED_MAX;
-		public static float	FORCE_SCALE2(x){ return x<<7;}
-		public static float FORCE_INV_SCALE2(x)	{return x>>7;}
+		public static float FORCE_SCALE2(x) { return x << 7; }
+		public static float FORCE_INV_SCALE2(x) { return x >> 7; }
 #else
 		public static readonly float FLT_EPSILON = 1.192092896e-07F;
 		public static readonly float FLT_MAX = 3.402823466e+38F;
@@ -46,7 +46,7 @@ namespace Box2DX.Common
 		// Collision
 		public static readonly int MaxManifoldPoints = 2;
 		public static readonly int MaxPolygonVertices = 8;
-		public static readonly int MaxProxies = 512; // this must be a power of two
+		public static readonly int MaxProxies = 2048; // this must be a power of two
 		public static readonly int MaxPairs = 8 * MaxProxies; // this must be a power of two
 
 		// Dynamics
@@ -55,7 +55,7 @@ namespace Box2DX.Common
 		/// A small length used as a collision and constraint tolerance. Usually it is
 		/// chosen to be numerically significant, but visually insignificant.
 		/// </summary>
-		public static readonly float LinearSlop = 0.005f;	// 0.5 cm
+		public static readonly float LinearSlop = 0.005f; // 0.5 cm
 
 		/// <summary>
 		/// A small angle used as a collision and constraint tolerance. Usually it is
@@ -144,7 +144,7 @@ namespace Box2DX.Common
 		/// </summary>
 		public static float MixFriction(float friction1, float friction2)
 		{
-			return (float)System.Math.Sqrt(friction1 * friction2);
+			return (float) System.Math.Sqrt(friction1 * friction2);
 		}
 
 		/// <summary>
